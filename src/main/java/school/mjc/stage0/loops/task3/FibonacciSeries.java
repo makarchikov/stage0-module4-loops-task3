@@ -5,22 +5,19 @@ public class FibonacciSeries {
         if (lastFibonacci < 1) {
             return;
         }
-        int n0 = 1;
-        int n1 = 1;
+        int firstTerm = 0;
+        int secondTerm = 1;
 
-        if (lastFibonacci == 1) {
-            System.out.println(n0);
-            return;
-        } else if (lastFibonacci == 2) {
-            System.out.println(n0);
-            System.out.println(n1);
-        } else {
-            int n2;
-            for (int i = 3; i <= lastFibonacci; i++) {
-                n2 = n0 + n1;
-                System.out.println(n2);
-                n0 = n1;
-                n1 = n2;
+        System.out.println(firstTerm);
+
+        if (lastFibonacci > 1) {
+            System.out.println(secondTerm);
+
+            for (int i = 2; i < lastFibonacci; i++) {
+                int nextTerm = firstTerm + secondTerm;
+                System.out.println(nextTerm);
+                firstTerm = secondTerm;
+                secondTerm = nextTerm;
             }
         }
     }
